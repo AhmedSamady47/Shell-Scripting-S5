@@ -1,0 +1,13 @@
+1- ls -l | tr " " "*" 
+2- awk -F: '{print "Nom : " $1 "  UID : " $3}' /etc/passwd
+3- who | awk '{print $1,$2}'
+4- who | awk '{print $1 " " $2}'
+5- who | awk '{print “user: ”, $1}'
+6- awk -F: '{print NR " " $1}' /etc/passwd
+7- awk 'NR == 5, NR == 10' /etc/passwd
+8- awk '{print NR}' /etc/passwd | tail -1
+9- awk -F: '{print $NF}' /etc/passwd
+10- awk -F: '$NF == "" {print $1}' /etc/passwd
+11- netstat -a | awk '{print $4 " " $6}' | grep "LISTEN"
+12- nmap -sT -p 1-1024 -oG - localhost | grep 'Status: Up'
+13- ps -u| awk '{print $4}'
